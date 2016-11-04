@@ -1,6 +1,6 @@
 {
   "win32-x64-prod": {
-    "update": "https://github.com/MrBlenny/STEMN-Desktop/releases/download/win32-x64-prod-v0.0.4",
+    "update": "https://github.com/Stemn/Stemn-Desktop/releases/download/win32-x64-prod-v0.0.4",
     "version": "0.0.4",
     "platform": "win32",
     "readme": "Version 0.0.4"
