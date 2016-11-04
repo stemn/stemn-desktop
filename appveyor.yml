@@ -4,8 +4,8 @@ platform:
   - x64
   
 artifacts:
-  - path: releases
-    name: releases
+  - path: release
+    name: release
 
 cache:
   - node_modules
