@@ -26,6 +26,6 @@ install:
 build_script:
   - node --version
   - npm --version
-  - node_modules/.bin/build --windows --publish onTagOrDraft
+  - node_modules/.bin/build --windows --publish always
   
 test: off
