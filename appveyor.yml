@@ -22,6 +22,6 @@ install:
 build_script:
   - node --version
   - npm --version
-  - npm run compile
-
+  - node_modules/.bin/build --windows
+  
 test: off
