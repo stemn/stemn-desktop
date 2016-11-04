@@ -18,11 +18,10 @@ install:
   - npm install npm -g
   - npm install electron-builder@next # force install next version to test electron-builder
   - npm install
-  - npm prune
 
 build_script:
   - node --version
   - npm --version
-  - npm run dist
+  - npm run compile
 
 test: off
