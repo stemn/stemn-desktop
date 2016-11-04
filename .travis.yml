@@ -34,7 +34,7 @@ install:
 - npm install
 
 script:
-- npm run compile
+- node_modules/.bin/build --mac --linux
 
 branches:
   except:
