@@ -18,7 +18,12 @@ before_install:
 - brew install graphicsmagick
 - brew install libpng
 - brew install openjpeg
-- brew install icns2png
+- wget http://downloads.sourceforge.net/project/icns/libicns-0.8.1.tar.gz -O /tmp/libicns.tar.gz
+- tar -xvf /tmp/libicns.tar.gz
+- cd /tmp/libicns
+- ./configure
+- ./make
+- ./make install
 
 install:
 - git reset --hard HEAD
