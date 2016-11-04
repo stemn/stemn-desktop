@@ -1,0 +1,28 @@
+.tooltip:hover:after {
+  content: attr(alt);
+  padding: 8px;
+  color: #333;
+  position: absolute;
+  transform: translate(-50%, 50%);
+  white-space: nowrap;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1),0 2px 15px rgba(0,0,0,0.1);
+  background: white;
+  z-index: 10;
+  -webkit-animation: fadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
+          animation: fadein 0.5s;
+}
+
+
+@keyframes fadein {
+    0%  { opacity: 0; }
+    80% { opacity: 0; }
+    100%{ opacity: 1; }
+}
+
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    0%  { opacity: 0; }
+    80% { opacity: 0; }
+    100%{ opacity: 1; }
+}

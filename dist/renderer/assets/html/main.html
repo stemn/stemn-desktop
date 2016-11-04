@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>STEMN</title>
+    <link rel="stylesheet" href="../fonts/opensans/opensans.css" />
+    <link rel="stylesheet" href="../fonts/blokk/blokkfont.css" />
+    <script>
+      (function() {
+        function createLink(href){
+          const link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = href;
+          document.write(link.outerHTML);
+        }
+        if (!process.env.HOT) {
+          [ '../../common/style.css',
+            '../../commonPreview/style.css',
+            '../../main/style.css'
+          ].map(createLink);
+        }
+      }());
+    </script>
+  </head>
+  <body class="layout-column">
+    <div class="layout-column flex" id="root"></div>    
+    <script>
+      (function() {
+        function createScript(hrefs){
+          const script = document.createElement('script');
+          script.src = (process.env.HOT) ? hrefs[0] : hrefs[1];
+          document.write(script.outerHTML);
+        }
+        [ ['http://localhost:3001/dist/common.js'        , '../../common/index.js'],
+          ['http://localhost:3001/dist/commonPreview.js' , '../../commonPreview/index.js'],
+          ['http://localhost:3001/dist/main/index.js'    , '../../main/index.js']
+        ].map(createScript);
+      }());
+    </script>   
+    <script src="../other/autodesk/viewer3D.min.js"></script>
+    <script src="../other/autodesk/three.min.js"></script>
+    <link rel="stylesheet" href="../other/autodesk/style.min.css">
+    <script src="../other/gerber/js/three.min.js"></script>
+  </body>
+</html>
