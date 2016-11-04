@@ -18,6 +18,10 @@ addons:
       - icnsutils
 
 install:
+- brew install graphicsmagick
+- brew install libpng
+- brew install openjpeg
+- brew install icns2png
 - git reset --hard HEAD
 - nvm install 6
 - npm install electron-builder@next # force install next version to test electron-builder
