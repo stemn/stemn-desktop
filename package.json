@@ -5,7 +5,7 @@
   "description": "Painless Engineering Versioning",
   "repository" : { 
     "type" : "git",
-    "url"  : "https://github.com/MrBlenny/STEMN-Desktop"
+    "url"  : "https://github.com/Stemn/Stemn-Desktop"
   },
   "main": "dist/main/index.js",
   "scripts": {

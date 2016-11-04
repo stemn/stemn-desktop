@@ -1,10 +1,10 @@
-version: 0.4.{build}
+version: 0.1.{build}
 
 platform:
   - x64
   
 artifacts:
-  - path: release
+  - path: release/win
     name: release
 
 cache:
@@ -26,6 +26,6 @@ install:
 build_script:
   - node --version
   - npm --version
-  - node_modules/.bin/build --windows
+  - node_modules/.bin/build --windows --publish onTagOrDraft
   
 test: off
