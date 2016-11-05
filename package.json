@@ -1,7 +1,7 @@
 {
   "name": "STEMN",
   "productName": "STEMN",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Painless Engineering Versioning",
   "repository" : { 
     "type" : "git",
@@ -27,16 +27,16 @@
       "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js  --progress --profile --colors && cp app/package.json dist/",
       "env": {
         "NODE_ENV": "production",
-        "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125"
+        "API_SERVER": "35.162.145.41",
+        "WEBSOCKET_SERVER": "35.162.145.41"
       }
     },    
     "build:renderer": {
       "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors && cp -R app/renderer/assets dist/renderer",
       "env": {
         "NODE_ENV": "production",
-        "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125"
+        "API_SERVER": "35.162.145.41",
+        "WEBSOCKET_SERVER": "35.162.145.41"
       }
     },   
     "app": {
@@ -53,8 +53,8 @@
       "env": {
         "HOT": "1",
         "NODE_ENV": "production",
-        "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125"
+        "API_SERVER": "35.162.145.41",
+        "WEBSOCKET_SERVER": "35.162.145.41"
       }
     },  
     "server": {
@@ -67,8 +67,8 @@
     "server:test": {
       "command": "node --max-old-space-size=4096 -r babel-register server.js",
       "env": {
-        "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125"
+        "API_SERVER": "35.162.145.41",
+        "WEBSOCKET_SERVER": "35.162.145.41"
       }
     }
   },
