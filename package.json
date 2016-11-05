@@ -1,11 +1,11 @@
 {
   "name": "STEMN",
   "productName": "STEMN",
-  "version": "0.0.4",
+  "version": "0.0.2",
   "description": "Painless Engineering Versioning",
   "repository" : { 
     "type" : "git",
-    "url"  : "https://github.com/Stemn/Stemn-Desktop"
+    "url"  : "https://github.com/MrBlenny/STEMN-Desktop"
   },
   "main": "dist/main/index.js",
   "scripts": {
@@ -17,10 +17,11 @@
     "build:main"      : "better-npm-run build:main",
     "build:renderer"  : "better-npm-run build:renderer",
     "app"             : "better-npm-run app",
+    "app:prod"        : "better-npm-run app:prod",
     "app:test"        : "better-npm-run app:test",
-    "server"          : "better-npm-run server",
-    "server:test"     : "better-npm-run server:test",
-    "compile"         : "node ./scripts/build.js"
+    "server"          : "better-npm-run serve",
+    "compile"         : "node ./scripts/build.js",
+    "release"         : "node ./scripts/build.js"
   },
   "betterScripts": {
     "build:main": {
@@ -28,7 +29,8 @@
       "env": {
         "NODE_ENV": "production",
         "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125"
+        "WEBSOCKET_SERVER": "54.70.226.125",
+        "UPDATE_SERVER": "https://tonvai.com:2087"
       }
     },    
     "build:renderer": {
@@ -36,7 +38,8 @@
       "env": {
         "NODE_ENV": "production",
         "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125"
+        "WEBSOCKET_SERVER": "54.70.226.125",
+        "UPDATE_SERVER": "https://tonvai.com:2087"
       }
     },   
     "app": {
@@ -45,30 +48,29 @@
         "HOT": "1",
         "NODE_ENV": "development",
         "API_SERVER": "localhost:3000",
-        "WEBSOCKET_SERVER": "localhost"
+        "WEBSOCKET_SERVER": "localhost",
+        "UPDATE_SERVER": "https://tonvai.com:2087"
       }
-    },           
+    },      
+    "app:prod": {
+      "command": "electron ./app/main/index"
+    },     
     "app:test": {
       "command": "electron -r babel-register -r babel-polyfill ./app/main/index",
       "env": {
         "HOT": "1",
         "NODE_ENV": "production",
         "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125"
+        "WEBSOCKET_SERVER": "54.70.226.125",
+        "UPDATE_SERVER": "https://tonvai.com:2087"
       }
     },  
-    "server": {
+    "serve": {
       "command": "node --max-old-space-size=4096 -r babel-register server.js",
       "env": {
         "API_SERVER": "localhost:3000",
-        "WEBSOCKET_SERVER": "localhost"
-      }
-    },
-    "server:test": {
-      "command": "node --max-old-space-size=4096 -r babel-register server.js",
-      "env": {
-        "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125"
+        "WEBSOCKET_SERVER": "localhost",
+        "UPDATE_SERVER": "https://tonvai.com:2087"
       }
     }
   },
