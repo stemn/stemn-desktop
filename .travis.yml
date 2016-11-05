@@ -30,6 +30,8 @@ install:
 - nvm install 6
 - npm install electron-builder@next # force install next version to test electron-builder
 - npm install
+- pwd
+- ls
 - ls node_modules/.bin
 
 script:
