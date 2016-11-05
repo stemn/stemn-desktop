@@ -20,7 +20,7 @@ before_install:
 - brew install openjpeg
 - wget http://downloads.sourceforge.net/project/icns/libicns-0.8.1.tar.gz -O /tmp/libicns.tar.gz
 - tar -xvf /tmp/libicns.tar.gz
-- cd /tmp/libicns
+- cd /tmp/libicns-0.8.1
 - ./configure
 - ./make
 - ./make install
