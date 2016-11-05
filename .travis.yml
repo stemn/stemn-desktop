@@ -22,8 +22,8 @@ before_install:
 - tar -xvf libicns.tar.gz
 - cd libicns-0.8.1
 - ./configure
-- ./make
-- ./make install
+- make
+- make install
 
 install:
 - git reset --hard HEAD
