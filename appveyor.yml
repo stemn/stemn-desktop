@@ -3,10 +3,6 @@ version: 0.1.{build}
 platform:
   - x64
   
-artifacts:
-  - path: release/win
-    name: release
-
 cache:
   - node_modules
   - app\node_modules
