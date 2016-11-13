@@ -6,20 +6,21 @@ html {
 }
 
 body {
-    position: relative;
-    color: black;
-    height: 100vh;
-    background-color: white;
-    font-family: Open Sans;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    font-size: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+/*  position: relative;*/
+  color: black;
+  height: 100vh;
+  background-color: white;
+  font-family: Open Sans;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-size: 12px;
 
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently
-                                    not supported by any browser */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;           /* Non-prefixed version, currently
+                                  not supported by any browser */
 }

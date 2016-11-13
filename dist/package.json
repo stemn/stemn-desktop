@@ -1,6 +1,6 @@
 {
   "name": "STEMN",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Painless Engineering Versioning",
   "main": "main/index.js",
   "author": {
@@ -50,6 +50,8 @@
     "pify": "^2.3.0",
     "postcss": "^5.0.19",
     "primus": "^6.0.2",
+    "raven": "^0.12.1",
+    "raven-js": "^3.8.0",
     "raw-loader": "^0.5.1",
     "react": "^15.3.1",
     "react-addons-css-transition-group": "^15.2.1",
@@ -83,7 +85,7 @@
     "redux-promise-middleware": "^4.0.0",
     "redux-thunk": "^2.0.1",
     "sortablejs": "^1.4.2",
-    "sql.js": "^0.3.2",
+    "sql.js": "https://github.com/Stemn/sql.js/tarball/master",
     "substyle": "^2.0.2",
     "url-loader": "^0.5.7"
   }

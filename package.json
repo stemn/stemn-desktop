@@ -1,7 +1,7 @@
 {
   "name": "STEMN",
   "productName": "STEMN",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Painless Engineering Versioning",
   "repository" : { 
     "type" : "git",
@@ -26,49 +26,55 @@
     "build:main": {
       "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js  --progress --profile --colors && cp app/package.json dist/",
       "env": {
-        "NODE_ENV": "production",
-        "API_SERVER": "35.162.145.41",
-        "WEBSOCKET_SERVER": "35.162.145.41"
+        "NODE_ENV"                      : "production",
+        "API_SERVER"                    : "http://35.162.145.41",
+        "WEBSOCKET_SERVER"              : "http://35.162.145.41:8000",
+        "ELECTRON_CRASH_REPORT_SERVER"  : "http://35.162.145.41:2096"
       }
     },    
     "build:renderer": {
       "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors && cp -R app/renderer/assets dist/renderer",
       "env": {
-        "NODE_ENV": "production",
-        "API_SERVER": "35.162.145.41",
-        "WEBSOCKET_SERVER": "35.162.145.41"
+        "NODE_ENV"                      : "production",
+        "API_SERVER"                    : "http://35.162.145.41",
+        "WEBSOCKET_SERVER"              : "http://35.162.145.41:8000",
+        "ELECTRON_CRASH_REPORT_SERVER"  : "http://35.162.145.41:2096"
       }
     },   
     "app": {
       "command": "electron -r babel-register -r babel-polyfill ./app/main/index",
       "env": {
         "HOT": "1",
-        "NODE_ENV": "development",
-        "API_SERVER": "localhost:3000",
-        "WEBSOCKET_SERVER": "localhost"
+        "NODE_ENV"                      : "development",
+        "API_SERVER"                    : "localhost:3000",
+        "WEBSOCKET_SERVER"              : "localhost:8000",
+        "ELECTRON_CRASH_REPORT_SERVER"  : "localhost:2096"
       }
     },           
     "app:test": {
       "command": "electron -r babel-register -r babel-polyfill ./app/main/index",
       "env": {
         "HOT": "1",
-        "NODE_ENV": "production",
-        "API_SERVER": "35.162.145.41",
-        "WEBSOCKET_SERVER": "35.162.145.41"
+        "NODE_ENV"                      : "development",
+        "API_SERVER"                    : "http://35.162.145.41",
+        "WEBSOCKET_SERVER"              : "http://35.162.145.41:8000",
+        "ELECTRON_CRASH_REPORT_SERVER"  : "http://35.162.145.41:2096"
       }
     },  
     "server": {
       "command": "node --max-old-space-size=4096 -r babel-register server.js",
       "env": {
-        "API_SERVER": "localhost:3000",
-        "WEBSOCKET_SERVER": "localhost"
+        "API_SERVER"                    : "localhost:3000",
+        "WEBSOCKET_SERVER"              : "localhost:8000",
+        "ELECTRON_CRASH_REPORT_SERVER"  : "localhost:2096"
       }
     },
     "server:test": {
       "command": "node --max-old-space-size=4096 -r babel-register server.js",
       "env": {
-        "API_SERVER": "35.162.145.41",
-        "WEBSOCKET_SERVER": "35.162.145.41"
+        "API_SERVER"                    : "http://35.162.145.41",
+        "WEBSOCKET_SERVER"              : "http://35.162.145.41:8000",
+        "ELECTRON_CRASH_REPORT_SERVER"  : "http://35.162.145.41:2096"
       }
     }
   },
