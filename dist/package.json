@@ -1,6 +1,6 @@
 {
   "name": "STEMN",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Painless Engineering Versioning",
   "main": "main/index.js",
   "author": {
@@ -50,7 +50,7 @@
     "pify": "^2.3.0",
     "postcss": "^5.0.19",
     "primus": "^6.0.2",
-    "raven": "^0.12.1",
+    "raven": "https://github.com/Stemn/raven-node",
     "raven-js": "^3.8.0",
     "raw-loader": "^0.5.1",
     "react": "^15.3.1",
