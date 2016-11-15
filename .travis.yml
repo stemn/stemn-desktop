@@ -18,7 +18,7 @@ before_install:
 - brew install graphicsmagick
 - brew install libpng
 - brew install openjpeg
-- wget http://downloads.sourceforge.net/project/icns/libicns-0.8.1.tar.gz -O libicns.tar.gz
+- wget https://s3-ap-southeast-2.amazonaws.com/stemn-s3fs/libicns-0.8.1.tar.gz -O libicns.tar.gz
 - tar -xvf libicns.tar.gz
 - cd libicns-0.8.1
 - ./configure
