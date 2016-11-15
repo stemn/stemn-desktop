@@ -1,76 +1,80 @@
 {
-  "name": "STEMN",
-  "productName": "STEMN",
-  "version": "0.0.2",
-  "description": "Painless Engineering Versioning",
-  "repository" : { 
-    "type" : "git",
-    "url"  : "https://github.com/MrBlenny/STEMN-Desktop"
+  "name": "Stemn",
+  "productName": "Stemn",
+  "version": "0.0.11",
+  "description": "Engineering Versioning and Project Management",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stemn/Stemn-Desktop"
   },
   "main": "dist/main/index.js",
   "scripts": {
-    "test"            : "cross-env NODE_ENV=test mocha --compilers js:babel-register --recursive --require ./test/setup.js test/**/*.spec.js",
-    "test-watch"      : "npm test -- --watch",
-    "test-e2e"        : "cross-env NODE_ENV=test mocha --compilers js:babel-register --require ./test/setup.js --require co-mocha ./test/e2e.js",
-    "lint"            : "eslint app test *.js",
-    "build"           : "better-npm-run build:main && better-npm-run build:renderer",
-    "build:main"      : "better-npm-run build:main",
-    "build:renderer"  : "better-npm-run build:renderer",
-    "app"             : "better-npm-run app",
-    "app:prod"        : "better-npm-run app:prod",
-    "app:test"        : "better-npm-run app:test",
-    "server"          : "better-npm-run serve",
-    "compile"         : "node ./scripts/build.js",
-    "release"         : "node ./scripts/build.js"
+    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-register --recursive --require ./test/setup.js test/**/*.spec.js",
+    "test-watch": "npm test -- --watch",
+    "test-e2e": "cross-env NODE_ENV=test mocha --compilers js:babel-register --require ./test/setup.js --require co-mocha ./test/e2e.js",
+    "lint": "eslint app test *.js",
+    "build": "better-npm-run build:main && better-npm-run build:renderer",
+    "build:main": "better-npm-run build:main",
+    "build:renderer": "better-npm-run build:renderer",
+    "app": "better-npm-run app",
+    "app:test": "better-npm-run app:test",
+    "server": "better-npm-run server",
+    "server:test": "better-npm-run server:test",
+    "compile": "node ./scripts/build.js"
   },
   "betterScripts": {
     "build:main": {
       "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js  --progress --profile --colors && cp app/package.json dist/",
       "env": {
         "NODE_ENV": "production",
-        "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125",
-        "UPDATE_SERVER": "https://tonvai.com:2087"
+        "API_SERVER": "http://35.162.145.41",
+        "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
       }
-    },    
+    },
     "build:renderer": {
       "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors && cp -R app/renderer/assets dist/renderer",
       "env": {
         "NODE_ENV": "production",
-        "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125",
-        "UPDATE_SERVER": "https://tonvai.com:2087"
+        "API_SERVER": "http://35.162.145.41",
+        "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
       }
-    },   
+    },
     "app": {
       "command": "electron -r babel-register -r babel-polyfill ./app/main/index",
       "env": {
         "HOT": "1",
         "NODE_ENV": "development",
-        "API_SERVER": "localhost:3000",
-        "WEBSOCKET_SERVER": "localhost",
-        "UPDATE_SERVER": "https://tonvai.com:2087"
+        "API_SERVER": "http://localhost:3000",
+        "WEBSOCKET_SERVER": "http://localhost:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://localhost:2096"
       }
-    },      
-    "app:prod": {
-      "command": "electron ./app/main/index"
-    },     
+    },
     "app:test": {
       "command": "electron -r babel-register -r babel-polyfill ./app/main/index",
       "env": {
         "HOT": "1",
-        "NODE_ENV": "production",
-        "API_SERVER": "54.70.226.125",
-        "WEBSOCKET_SERVER": "54.70.226.125",
-        "UPDATE_SERVER": "https://tonvai.com:2087"
+        "NODE_ENV": "development",
+        "API_SERVER": "http://35.162.145.41",
+        "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
       }
-    },  
-    "serve": {
+    },
+    "server": {
       "command": "node --max-old-space-size=4096 -r babel-register server.js",
       "env": {
-        "API_SERVER": "localhost:3000",
-        "WEBSOCKET_SERVER": "localhost",
-        "UPDATE_SERVER": "https://tonvai.com:2087"
+        "API_SERVER": "http://localhost:3000",
+        "WEBSOCKET_SERVER": "http://localhost:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://localhost:2096"
+      }
+    },
+    "server:test": {
+      "command": "node --max-old-space-size=4096 -r babel-register server.js",
+      "env": {
+        "API_SERVER": "http://35.162.145.41",
+        "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
       }
     }
   },
@@ -91,7 +95,7 @@
   ],
   "homepage": "https://stemn.com",
   "bugs": {
-    "url": "https://stemn.com",
+    "url": "https://github.com/Stemn/Stemn-Desktop/issues",
     "email": "bugs@stemn.com"
   },
   "dependencies": {
@@ -110,6 +114,7 @@
     "babel-register": "^6.7.2",
     "better-npm-run": "0.0.13",
     "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "chromedriver": "^2.21.2",
     "co-mocha": "^1.1.2",
     "concurrently": "^2.0.0",
@@ -117,6 +122,7 @@
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
     "devtron": "^1.2.1",
+    "electron-chromedriver": "^1.4.0",
     "electron-rebuild": "^1.1.3",
     "es6-promise": "^3.3.1",
     "eslint": "^2.9.0",
@@ -140,6 +146,7 @@
     "selenium-webdriver": "^2.53.1",
     "sinon": "^1.17.3",
     "source-map-support": "^0.4.0",
+    "spectron": "^3.4.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webfont-dl": "^0.1.2",
@@ -159,7 +166,7 @@
     "appId": "stemn.stemn",
     "app-bundle-id": "stemn.stemn",
     "app-category-type": "public.app-category.productivity",
-    "productName": "STEMN",
+    "productName": "Stemn",
     "compression": "normal",
     "asar": true,
     "win": {
