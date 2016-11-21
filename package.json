@@ -2,7 +2,7 @@
   "name": "Stemn",
   "productName": "Stemn",
   "version": "0.0.11",
-  "description": "Engineering Versioning and Project Management",
+  "description": "Stemn Desktop: Versioning and project management",
   "repository": {
     "type": "git",
     "url": "https://github.com/Stemn/Stemn-Desktop"
