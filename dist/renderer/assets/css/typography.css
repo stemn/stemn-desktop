@@ -67,6 +67,9 @@
   letter-spacing: 1px;
   opacity: 0.8;
 }
+.text-blokk{
+  font-family: blokk;
+}
 
 
 .text-interpunct::before{
