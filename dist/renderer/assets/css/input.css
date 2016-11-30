@@ -8,6 +8,8 @@
   border: 1px solid border1;
   resize: none;
   background: white;
+
+  -webkit-user-select: text;
 }
 .dr-input:global(.active) {
   border: 1px solid rgba(0, 0, 0, 0.4);
