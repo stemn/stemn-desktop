@@ -33,7 +33,7 @@ install:
 - npm install
 
 script:
-- node_modules/.bin/build --linux --publish always
+- node ./scripts/publish/index.js
 - node_modules/.bin/build --mac --publish always
 
 notifications:
