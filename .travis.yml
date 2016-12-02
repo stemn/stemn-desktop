@@ -33,8 +33,9 @@ install:
 - npm install
 
 script:
-- node ./scripts/publish/index.js
+- node ./scripts/publish/index.js # this will create release.json in release/mac
 - node_modules/.bin/build --mac --publish always
+- node_modules/.bin/build --linux --publish always
 
 notifications:
   email: false
