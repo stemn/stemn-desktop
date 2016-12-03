@@ -1,6 +1,12 @@
 const path = require('path');
 const fs = require('fs');
-const pkg = require('../../package.json')
+const pkg = require('../../package.json');
+const ghRelease = require('gh-release');
+
+const config = {
+  owner: 'Stemn',
+  repo: 'Stemn-Desktop',
+}
 
 // We assume we are running this script from the root folder
 const assetsPath = './release/mac';
@@ -26,7 +32,7 @@ const createDir = (dir) => {
 const publishOsxReleaseFile = (tag) => {
   console.log('Writing release.json to release/mac/release.json...');
   const data = {
-    url: `https://github.com/Stemn/Stemn-Desktop/releases/download/v${tag}/Stemn-${tag}-mac.zip`,
+    url: `https://github.com/${config.owner}/${config.repo}/releases/download/v${tag}/Stemn-${tag}-mac.zip`,
     name: '',
     notes: '',
     pub_date: new Date().toISOString()
@@ -41,3 +47,26 @@ const publishOsxReleaseFile = (tag) => {
 }
 
 publishOsxReleaseFile(pkg.version);
+
+
+const options = {
+  tag_name: `v${pkg.version}`,
+  target_commitish: 'something',
+  name: `v${pkg.version}`,
+  body: ' ',
+  draft: true,
+  prerelease: false,
+  repo: config.repo,
+  owner: config.owner,
+  assets: ['./release/mac/release.json'],
+  workpath: './',
+  auth: {
+    token: process.env.GH_TOKEN,
+  }
+}
+
+console.log('Adding release.json to github release');
+ghRelease(options, function (err, result) {
+  if (err) throw err
+  console.log(result);
+})
