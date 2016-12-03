@@ -36,6 +36,9 @@ script:
 - node ./scripts/publish/index.js # this will create release.json in release/mac
 - node_modules/.bin/build --mac --publish always
 - node_modules/.bin/build --linux --publish always
+- ls release
+- ls release/mac
+- ls release/linux
 
 notifications:
   email: false
