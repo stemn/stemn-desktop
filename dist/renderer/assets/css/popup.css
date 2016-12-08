@@ -13,7 +13,7 @@
   stroke: rgba(0, 0, 0, 0.12);
 }
 .Popover{
-  z-index: 200;
+  z-index: 100;
   transform: translateY(0px) !important;
 }
 

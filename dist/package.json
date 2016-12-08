@@ -1,6 +1,6 @@
 {
   "name": "Stemn",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Stemn Desktop: Versioning and project management",
   "main": "main/index.js",
   "author": {
@@ -17,7 +17,7 @@
   "dependencies": {
     "auto-launch": "^5.0.1",
     "autosuggest-highlight": "^2.1.1",
-    "axios": "^0.13.1",
+    "axios": "^0.15.3",
     "classnames": "^2.2.5",
     "codemirror": "^5.17.0",
     "css-modules-require-hook": "^4.0.0",

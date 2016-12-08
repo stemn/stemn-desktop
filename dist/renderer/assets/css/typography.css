@@ -12,6 +12,7 @@
 }
 .text-title-4{
   font-size: 18px;
+  line-height: 1.4em;
   font-weight: 300;
 }
 .text-title-5{
@@ -52,6 +53,12 @@
 }
 .link-primary:hover{
   color: rgb(64, 129, 173)
+}
+.link-grey{
+  color: rgba(0, 0, 0, 0.3);
+}
+.link-grey:hover{
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .text-ellipsis{
