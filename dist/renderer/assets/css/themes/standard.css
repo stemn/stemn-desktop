@@ -10,6 +10,13 @@
 @value timeline-main: rgb(188, 188, 188);
 @value timeline-bg: #f8f8f8;
 
+@value sidebar-bg: #1c1e22;
+@value sidebar-text-1: white;
+@value sidebar-text-2: rgba(255, 255, 255, 0.8);
+@value sidebar-footer: #141619;
+@value sidebar-search-border: rgba(255, 255, 255, 0.2);
+@value sidebar-search-bg: rgba(255, 255, 255, 0.1);
+@value sidebar-search-text: rgba(255, 255, 255, 0.8);
 
 @value border1: rgba(0, 0, 0, 0.1);
 @value border2: rgba(0, 0, 0, 0.3);
@@ -20,6 +27,9 @@
 @value grey-3: rgba(0, 0, 0, 0.5);
 
 @value placholder: rgba(0, 0, 0, 0.5);
+
+@value height-header: 50px;
+@value width-header-buttons: 90px;
 
 /*External*/
 @value linkedin: #1884bc;

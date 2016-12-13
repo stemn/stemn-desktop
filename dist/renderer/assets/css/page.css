@@ -6,7 +6,7 @@ html {
 }
 
 body {
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.9);
 /*  position: relative;*/
   color: black;
   height: 100vh;
@@ -15,6 +15,7 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
   font-size: 12px;
+  padding: 0px !important;
 
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
