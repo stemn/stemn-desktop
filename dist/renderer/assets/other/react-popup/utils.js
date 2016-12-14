@@ -1,55 +1,41 @@
-'use strict';
+import { isClient } from './platform'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.clientOnly = exports.noop = exports.equalRecords = exports.find = exports.arrayify = exports.assign = undefined;
 
-var _polyfill = require('object.assign/polyfill');
 
-var _polyfill2 = _interopRequireDefault(_polyfill);
+const arrayify = (x) => (
+  Array.isArray(x) ? x : [x]
+)
 
-var _platform = require('./platform');
+const find = (f, xs) => (
+  xs.reduce(((b, x) => b ? b : f(x) ? x : null), null)
+)
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+const equalRecords = (o1, o2) => {
+  for (const key in o1) if (o1[key] !== o2[key]) return false
+  return true
+}
 
-var assign = (0, _polyfill2.default)();
+const noop = () => (
+  undefined
+)
 
-var arrayify = function arrayify(x) {
-  return Array.isArray(x) ? x : [x];
-};
+const clientOnly = (f) => (
+  isClient ? f : noop
+)
 
-var find = function find(f, xs) {
-  return xs.reduce(function (b, x) {
-    return b ? b : f(x) ? x : null;
-  }, null);
-};
 
-var equalRecords = function equalRecords(o1, o2) {
-  for (var key in o1) {
-    if (o1[key] !== o2[key]) return false;
-  }return true;
-};
 
-var noop = function noop() {
-  return undefined;
-};
-
-var clientOnly = function clientOnly(f) {
-  return _platform.isClient ? f : noop;
-};
-
-exports.default = {
-  assign: assign,
-  arrayify: arrayify,
-  find: find,
-  equalRecords: equalRecords,
-  noop: noop,
-  clientOnly: clientOnly
-};
-exports.assign = assign;
-exports.arrayify = arrayify;
-exports.find = find;
-exports.equalRecords = equalRecords;
-exports.noop = noop;
-exports.clientOnly = clientOnly;
+export default {
+  arrayify,
+  find,
+  equalRecords,
+  noop,
+  clientOnly,
+}
+export {
+  arrayify,
+  find,
+  equalRecords,
+  noop,
+  clientOnly,
+}

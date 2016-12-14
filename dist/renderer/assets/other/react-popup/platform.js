@@ -1,18 +1,17 @@
-"use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+const isServer = typeof window === `undefined`
+const isClient = !isServer
+const WINDOW = isClient ? window : null
 
-var isServer = typeof window === "undefined";
-var isClient = !isServer;
-var WINDOW = isClient ? window : null;
 
-exports.default = {
-  isServer: isServer,
-  isClient: isClient,
-  window: WINDOW
-};
-exports.isServer = isServer;
-exports.isClient = isClient;
-exports.window = WINDOW;
+
+export default {
+  isServer,
+  isClient,
+  window: WINDOW,
+}
+export {
+  isServer,
+  isClient,
+  WINDOW as window,
+}
