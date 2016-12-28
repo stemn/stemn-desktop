@@ -11,6 +11,20 @@ import { isServer, window } from './platform'
 import { arrayify, clientOnly } from './utils'
 import Tip from './tip'
 
+export const ContextProvider = React.createClass({
+  // This will add store, history and router to the child's context
+  getChildContext() {
+    return this.props.context
+  },
+  childContextTypes: {
+    store: React.PropTypes.object.isRequired,
+    history: React.PropTypes.object.isRequired,
+    router: React.PropTypes.object.isRequired
+  },
+  render() {
+    return this.props.children
+  }
+})
 
 
 const log = Debug(`react-popover`)
@@ -430,8 +444,9 @@ const Popover = createClass({
     this.frameBounds = Layout.El.calcBounds(this.frameEl)
   },
   contextTypes: {
-    // Get store from the context
-    store: React.PropTypes.object
+    store   : React.PropTypes.object,
+    history : React.PropTypes.object,
+    router  : React.PropTypes.object,
   },
   renderLayer () {
     if (this.state.exited) return null
@@ -449,21 +464,20 @@ const Popover = createClass({
     }
 
     return (
-      <Provider store={this.context.store}>
+      <ContextProvider context={this.context}>
         <div {...popoverProps}>
           <div className="Popover-body">
             {this.props.body}
           </div>
           {createElement(Tip, tipProps)}
         </div>
-      </Provider>
+      </ContextProvider>
     )
   },
   render () {
     return this.props.children
   },
 })
-
 
 // Support for CJS
 // http://stackoverflow.com/questions/33505992/babel-6-changes-how-it-exports-default

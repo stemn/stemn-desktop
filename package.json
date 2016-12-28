@@ -1,7 +1,7 @@
 {
   "name": "Stemn",
   "productName": "Stemn",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "Stemn Desktop: Versioning and project management",
   "repository": {
     "type": "git",
@@ -140,10 +140,12 @@
     "json-loader": "^0.5.4",
     "minimist": "^1.2.0",
     "mocha": "^2.4.5",
+    "ng-redux": "^3.4.0-beta.1",
     "node-libs-browser": "^1.0.0",
     "node-monkey": "^1.0.0-beta.2",
     "react": "^15.2.1",
     "react-addons-test-utils": "^15.0.1",
+    "react-dom": "^15.4.1",
     "selenium-webdriver": "^2.53.1",
     "sinon": "^1.17.3",
     "source-map-support": "^0.4.0",

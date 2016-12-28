@@ -23,7 +23,14 @@
     </script>
   </head>
   <body class="layout-column">
-    <div class="layout-column flex" id="root" style="overflow: hidden"></div>    
+    <div id="loading" class="layout-row flex">
+      <div style="width: 300px; background: #1c1e22;"></div>
+      <div class="flex">
+        <div style="height: 50px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); -webkit-app-region: drag;"></div>
+      </div>
+    </div>
+    <div id="root" class="layout-column flex" style="overflow: hidden; display: none"></div>
+
     <script>
       (function() {
         function createScript(hrefs){
@@ -37,9 +44,9 @@
         ].map(createScript);
       }());
     </script>   
-    <script src="../other/autodesk/viewer3D.min.js"></script>
-    <script src="../other/autodesk/three.min.js"></script>
-    <link rel="stylesheet" href="../other/autodesk/style.min.css">
+    <script src="../other/autodesk/viewer/viewer3D.min.js"></script>
+    <script src="../other/autodesk/viewer/three.min.js"></script>
+    <link rel="stylesheet" href="../other/autodesk/viewer/style.min.css">
     <script src="../other/gerber/js/three.min.js"></script>
   </body>
 </html>
