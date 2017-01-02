@@ -143,7 +143,7 @@
     "ng-redux": "^3.4.0-beta.1",
     "node-libs-browser": "^1.0.0",
     "node-monkey": "^1.0.0-beta.2",
-    "react": "^15.2.1",
+    "react": "15.3.1",
     "react-addons-test-utils": "^15.0.1",
     "react-dom": "^15.4.1",
     "selenium-webdriver": "^2.53.1",
