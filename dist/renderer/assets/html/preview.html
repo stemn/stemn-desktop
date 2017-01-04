@@ -23,6 +23,9 @@
   </head>
   <body class="layout-column">
     <div class="layout-column flex" id="root" style="overflow: hidden"></div>
+    <script src="../other/autodesk/viewer/viewer3D.min.js"></script>
+    <script src="../other/autodesk/viewer/three.min.js"></script>
+    <link rel="stylesheet" href="../other/autodesk/viewer/style.min.css">
     <script>
       (function() {
         function createScript(hrefs){
@@ -35,10 +38,7 @@
           ['http://localhost:3001/dist/preview/index.js' , '../../preview/index.js']
         ].map(createScript);
       }());
-    </script>   
-    <script src="../other/autodesk/viewer/viewer3D.min.js"></script>
-    <script src="../other/autodesk/viewer/three.min.js"></script>
-    <link rel="stylesheet" href="../other/autodesk/viewer/style.min.css">
+    </script>
 
     <script src="../other/gerber/js/three.min.js"></script>
   </body>
