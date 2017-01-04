@@ -1,7 +1,7 @@
 {
   "name": "Stemn",
   "productName": "Stemn",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Stemn Desktop: Versioning and project management",
   "repository": {
     "type": "git",
@@ -199,6 +199,7 @@
   "devDependencies": {
     "cross-env": "^1.0.8",
     "electron": "^1.4.4",
-    "electron-builder": "^7.3.0"
+    "electron-builder": "^7.3.0",
+    "webpack-dashboard": "^0.2.0"
   }
 }
