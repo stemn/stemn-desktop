@@ -12,7 +12,7 @@
           link.href = href;
           document.write(link.outerHTML);
         }
-        if (!process.env.HOT) {
+        if (!process.env.NODE_ENV == 'development') {
           [ '../../common/style.css',
             '../../menubar/style.css',
           ].map(createLink);
@@ -26,7 +26,7 @@
       (function() {
         function createScript(hrefs){
           const script = document.createElement('script');
-          script.src = (process.env.HOT) ? hrefs[0] : hrefs[1];
+          script.src = (process.env.NODE_ENV == 'development') ? hrefs[0] : hrefs[1];
           document.write(script.outerHTML);
         }
         [ ['http://localhost:3001/dist/common.js'        , '../../common/index.js'],

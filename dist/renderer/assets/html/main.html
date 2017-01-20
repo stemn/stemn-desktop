@@ -5,6 +5,27 @@
     <title>Stemn</title>
     <link rel="stylesheet" href="../fonts/opensans/opensans.css" />
     <link rel="stylesheet" href="../fonts/blokk/blokkfont.css" />
+
+    <script type="text/javascript">
+        window.smartlook||(function(d) {
+        var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+        var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+        c.charset='utf-8';c.src='//rec.smartlook.com/recorder.js';h.appendChild(c);
+        })(document);
+        smartlook('init', '085069fa67b7fc4e04574c34c47fd83b64581c17');
+    </script>
+
+    <script>
+        (function(h,o,t,j,a,r){
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            h._hjSettings={hjid:381329,hjsv:5};
+            a=o.getElementsByTagName('head')[0];
+            r=o.createElement('script');r.async=1;
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+
     <script>
       (function() {
         function createLink(href){
@@ -13,7 +34,7 @@
           link.href = href;
           document.write(link.outerHTML);
         }
-        if (!process.env.HOT) {
+        if (!process.env.NODE_ENV == 'development') {
           [ '../../common/style.css',
             '../../commonPreview/style.css',
             '../../main/style.css'
@@ -35,7 +56,7 @@
       (function() {
         function createScript(hrefs){
           const script = document.createElement('script');
-          script.src = (process.env.HOT) ? hrefs[0] : hrefs[1];
+          script.src = (process.env.NODE_ENV == 'development') ? hrefs[0] : hrefs[1];
           document.write(script.outerHTML);
         }
         [ ['http://localhost:3001/dist/common.js'        , '../../common/index.js'],
@@ -43,7 +64,7 @@
           ['http://localhost:3001/dist/main/index.js'    , '../../main/index.js']
         ].map(createScript);
       }());
-    </script>   
+    </script>
     <script src="../other/autodesk/viewer/viewer3D.min.js"></script>
     <script src="../other/autodesk/viewer/three.min.js"></script>
     <link rel="stylesheet" href="../other/autodesk/viewer/style.min.css">

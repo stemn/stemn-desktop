@@ -1,7 +1,7 @@
 {
   "name": "Stemn",
   "productName": "Stemn",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "Stemn Desktop: Versioning and project management",
   "repository": {
     "type": "git",
@@ -18,8 +18,12 @@
     "build:renderer": "better-npm-run build:renderer",
     "app": "better-npm-run app",
     "app:test": "better-npm-run app:test",
+    "app:jackson": "better-npm-run app:jackson",
+    "app:watch": "better-npm-run app:watch",
     "server": "better-npm-run server",
     "server:test": "better-npm-run server:test",
+    "server:jackson": "better-npm-run server:jackson",
+    "electron": "better-npm-run electron",
     "compile": "node ./scripts/build.js"
   },
   "betterScripts": {
@@ -41,10 +45,15 @@
         "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
       }
     },
-    "app": {
-      "command": "electron -r babel-register -r babel-polyfill ./app/main/index",
+    "electron": {
+      "command": "electron dist/main",
       "env": {
-        "HOT": "1",
+        "NODE_ENV": "development"
+      }
+    },
+    "app": {
+      "command": "node -r babel-register ./node_modules/webpack/bin/webpack --watch --config webpack.config.electron.js  --progress --profile --colors",
+      "env": {
         "NODE_ENV": "development",
         "API_SERVER": "http://localhost:3000",
         "WEBSOCKET_SERVER": "http://localhost:8000",
@@ -52,18 +61,27 @@
       }
     },
     "app:test": {
-      "command": "electron -r babel-register -r babel-polyfill ./app/main/index",
+      "command": "node -r babel-register ./node_modules/webpack/bin/webpack --watch --config webpack.config.electron.js  --progress --profile --colors",
       "env": {
-        "HOT": "1",
         "NODE_ENV": "development",
         "API_SERVER": "http://35.162.145.41",
         "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
         "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
       }
     },
+    "app:jackson": {
+      "command": "node -r babel-register ./node_modules/webpack/bin/webpack --watch --config webpack.config.electron.js  --progress --profile --colors",
+      "env": {
+        "NODE_ENV": "development",
+        "API_SERVER": "http://192.168.1.2:3000",
+        "WEBSOCKET_SERVER": "http://192.168.1.2:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://192.168.1.2:2096"
+      }
+    },
     "server": {
       "command": "node --max-old-space-size=4096 -r babel-register server.js",
       "env": {
+        "NODE_ENV": "development",
         "API_SERVER": "http://localhost:3000",
         "WEBSOCKET_SERVER": "http://localhost:8000",
         "ELECTRON_CRASH_REPORT_SERVER": "http://localhost:2096"
@@ -72,9 +90,19 @@
     "server:test": {
       "command": "node --max-old-space-size=4096 -r babel-register server.js",
       "env": {
+        "NODE_ENV": "development",
         "API_SERVER": "http://35.162.145.41",
         "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
         "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
+      }
+    },
+    "server:jackson": {
+      "command": "node --max-old-space-size=4096 -r babel-register server.js",
+      "env": {
+        "NODE_ENV": "development",
+        "API_SERVER": "http://192.168.1.2:3000",
+        "WEBSOCKET_SERVER": "http://192.168.1.2:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://192.168.1.2:2096"
       }
     }
   },
@@ -122,6 +150,7 @@
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
     "devtron": "^1.2.1",
+    "electron": "^1.4.13",
     "electron-chromedriver": "^1.4.0",
     "electron-rebuild": "^1.1.3",
     "es6-promise": "^3.3.1",
@@ -195,11 +224,5 @@
   "directories": {
     "app": "./dist/",
     "output": "./release/"
-  },
-  "devDependencies": {
-    "cross-env": "^1.0.8",
-    "electron": "^1.4.4",
-    "electron-builder": "^7.3.0",
-    "webpack-dashboard": "^0.2.0"
   }
 }

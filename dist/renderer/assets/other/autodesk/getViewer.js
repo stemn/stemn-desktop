@@ -3,7 +3,7 @@ const http = require('axios');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 
-// Config
+// Config - Change this as required
 const version = 'v2.10'
 
 const downloadAndSave = ({url, dest, onProgress}) => {
