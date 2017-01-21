@@ -196,7 +196,6 @@
   "build": {
     "appId": "stemn.stemn",
     "app-bundle-id": "stemn.stemn",
-    "app-category-type": "public.app-category.productivity",
     "productName": "Stemn",
     "compression": "normal",
     "asar": true,
@@ -204,6 +203,7 @@
       "iconUrl": "https://stemn.com/uploads/85c7df7e-312b-4ed9-b12f-11d6d001a220.png"
     },
     "mac": {
+      "category": "public.app-category.productivity",
       "contents": [
         {
           "x": 448,
