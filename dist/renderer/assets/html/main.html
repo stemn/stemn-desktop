@@ -28,13 +28,15 @@
 
     <script>
       (function() {
+        console.log('env', process.env.NODE_ENV);
         function createLink(href){
+          console.log(href);
           const link = document.createElement('link');
           link.rel = 'stylesheet';
           link.href = href;
           document.write(link.outerHTML);
         }
-        if (!process.env.NODE_ENV == 'development') {
+        if (process.env.NODE_ENV != 'development') {
           [ '../../common/style.css',
             '../../commonPreview/style.css',
             '../../main/style.css'

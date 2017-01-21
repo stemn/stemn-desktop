@@ -1,1 +1,0 @@
-http://www.flaticon.com/packs/file-formats-icons
