@@ -195,7 +195,6 @@
   ],
   "build": {
     "appId": "stemn.stemn",
-    "app-bundle-id": "stemn.stemn",
     "productName": "Stemn",
     "compression": "normal",
     "asar": true,
@@ -218,10 +217,10 @@
           "path": "Stemn.app"
         }
       ]
+    },
+    "directories": {
+      "app": "./dist/",
+      "output": "./release/"
     }
-  },
-  "directories": {
-    "app": "./dist/",
-    "output": "./release/"
   }
 }
