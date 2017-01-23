@@ -16,7 +16,6 @@ install:
   - ps: Install-Product node 6 x64
   - git reset --hard HEAD
   - npm install npm -g
-  - npm install electron-builder@10.17.2
   - npm install
 
 build_script:
