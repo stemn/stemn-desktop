@@ -27,18 +27,18 @@
       "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js  --progress --profile --colors && cp app/package.json dist/",
       "env": {
         "NODE_ENV": "production",
-        "API_SERVER": "http://35.162.145.41",
-        "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
+        "API_SERVER": "http://35.167.249.144",
+        "WEBSOCKET_SERVER": "http://35.167.249.144:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://35.167.249.144:2096"
       }
     },
     "build:renderer": {
       "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors && cp -R app/renderer/assets dist/renderer",
       "env": {
         "NODE_ENV": "production",
-        "API_SERVER": "http://35.162.145.41",
-        "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
+        "API_SERVER": "http://35.167.249.144",
+        "WEBSOCKET_SERVER": "http://35.167.249.144:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://35.167.249.144:2096"
       }
     },
     "app": {
@@ -56,9 +56,9 @@
       "env": {
         "HOT": "1",
         "NODE_ENV": "development",
-        "API_SERVER": "http://35.162.145.41",
-        "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
+        "API_SERVER": "http://35.167.249.144",
+        "WEBSOCKET_SERVER": "http://35.167.249.144:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://35.167.249.144:2096"
       }
     },
     "server": {
@@ -72,9 +72,9 @@
     "server:test": {
       "command": "node --max-old-space-size=4096 -r babel-register server.js",
       "env": {
-        "API_SERVER": "http://35.162.145.41",
-        "WEBSOCKET_SERVER": "http://35.162.145.41:8000",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://35.162.145.41:2096"
+        "API_SERVER": "http://35.167.249.144",
+        "WEBSOCKET_SERVER": "http://35.167.249.144:8000",
+        "ELECTRON_CRASH_REPORT_SERVER": "http://35.167.249.144:2096"
       }
     }
   },
