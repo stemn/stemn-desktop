@@ -186,7 +186,8 @@
     "webpack-hot-middleware": "^2.10.0"
   },
   "devDependencies": {
-    "electron-builder": "10.17.2"
+    "electron-builder": "10.9.2",
+    "electron": "1.4.4"
   },
   "devEngines": {
     "node": "4.x || 5.x || 6.x",
@@ -202,6 +203,7 @@
     "compression": "normal",
     "asar": true,
     "win": {
+      "target": "squirrel",
       "iconUrl": "https://stemn.com/uploads/85c7df7e-312b-4ed9-b12f-11d6d001a220.png"
     },
     "mac": {
