@@ -163,7 +163,7 @@
   },
   "contributors": [
     "David Revay <david@stemn.com>",
-    "Jackson Delahunt <jackson@stemn.com>"
+    "Jackson Delahunt <jackson@stemn.co>"
   ],
   "build": {
     "appId": "stemn.stemn",
