@@ -29,7 +29,7 @@ before_install:
 install:
 - git reset --hard HEAD
 - nvm install 6
-- npm install electron-builder@next # force install next version to test electron-builder
+- npm install electron-builder@10.17.2
 - npm install
 
 script:
