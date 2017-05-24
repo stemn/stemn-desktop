@@ -1,7 +1,7 @@
 {
   "name": "Stemn",
   "productName": "Stemn",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "description": "Stemn Desktop: Versioning and project management",
   "repository": {
     "type": "git",
@@ -9,40 +9,53 @@
   },
   "main": "dist/main/index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test mocha --compilers js:babel-register --recursive --require ./test/setup.js test/**/*.spec.js",
-    "test-watch": "npm test -- --watch",
-    "test-e2e": "cross-env NODE_ENV=test mocha --compilers js:babel-register --require ./test/setup.js --require co-mocha ./test/e2e.js",
-    "lint": "eslint app test *.js",
-    "build": "better-npm-run build:main && better-npm-run build:renderer",
-    "build:main": "better-npm-run build:main",
+    "analyse:electron": "webpack-bundle-analyzer ./reports/electron-stats.json",
+    "analyse:renderer": "webpack-bundle-analyzer ./reports/renderer-stats.json",
+    "build": "better-npm-run build:electron && better-npm-run build:renderer",
+    "build:electron": "better-npm-run build:electron",
     "build:renderer": "better-npm-run build:renderer",
-    "app": "better-npm-run app",
-    "app:test": "better-npm-run app:test",
-    "app:jackson": "better-npm-run app:jackson",
-    "app:watch": "better-npm-run app:watch",
-    "server": "better-npm-run server",
-    "server:test": "better-npm-run server:test",
-    "server:jackson": "better-npm-run server:jackson",
+    "postbuild:renderer": "npm run build:html",
+    "build:html": "node ./scripts/buildHtml.js",
+    "start:renderer": "better-npm-run start:renderer",
+    "start:electron": "better-npm-run start:electron",
     "electron": "better-npm-run electron",
-    "compile": "node ./scripts/build.js"
+    "electron:prod": "better-npm-run electron:prod"
   },
   "betterScripts": {
-    "build:main": {
-      "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.electron.js  --progress --profile --colors && cp app/package.json dist/",
+    "build:electron": {
+      "command": "node ./scripts/electron.production.js",
       "env": {
         "NODE_ENV": "production",
-        "API_SERVER": "http://35.167.249.144",
-        "WEBSOCKET_SERVER": "http://35.167.249.144:8001",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://35.167.249.144:2096"
+        "API_SERVER": "https://dev.stemn.com",
+        "WEBSOCKET_SERVER": "https://dev.stemn.com:8001",
+        "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
+      }
+    },      
+    "build:renderer": {
+      "command": "node ./scripts/renderer.production.js",
+      "env": {
+        "NODE_ENV": "production",
+        "API_SERVER": "https://dev.stemn.com",
+        "WEBSOCKET_SERVER": "https://dev.stemn.com:8001",
+        "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
+      }
+    },    
+    "start:renderer": {
+      "command": "node ./scripts/renderer.development.js",
+      "env": {
+        "NODE_ENV": "development",
+        "API_SERVER": "https://dev.stemn.com",
+        "WEBSOCKET_SERVER": "https://dev.stemn.com:8001",
+        "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
       }
     },
-    "build:renderer": {
-      "command": "node -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config.production.js --progress --profile --colors && cp -R app/renderer/assets dist/renderer",
+    "start:electron": {
+      "command": "node ./node_modules/webpack/bin/webpack --watch  --config ./config/webpack.config.electron.js  --progress --profile --colors",
       "env": {
-        "NODE_ENV": "production",
-        "API_SERVER": "http://35.167.249.144",
-        "WEBSOCKET_SERVER": "http://35.167.249.144:8001",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://35.167.249.144:2096"
+        "NODE_ENV": "development",
+        "API_SERVER": "https://dev.stemn.com",
+        "WEBSOCKET_SERVER": "https://dev.stemn.com:8001",
+        "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
       }
     },
     "electron": {
@@ -50,59 +63,11 @@
       "env": {
         "NODE_ENV": "development"
       }
-    },
-    "app": {
-      "command": "node -r babel-register ./node_modules/webpack/bin/webpack --watch --config webpack.config.electron.js  --progress --profile --colors",
+    },   
+    "electron:prod": {
+      "command": "electron dist/main",
       "env": {
-        "NODE_ENV": "development",
-        "API_SERVER": "http://localhost:3000",
-        "WEBSOCKET_SERVER": "http://localhost:8001",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://localhost:2096"
-      }
-    },
-    "app:test": {
-      "command": "node -r babel-register ./node_modules/webpack/bin/webpack --watch --config webpack.config.electron.js  --progress --profile --colors",
-      "env": {
-        "NODE_ENV": "development",
-        "API_SERVER": "http://35.167.249.144",
-        "WEBSOCKET_SERVER": "http://35.167.249.144:8001",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://35.167.249.144:2096"
-      }
-    },
-    "app:jackson": {
-      "command": "node -r babel-register ./node_modules/webpack/bin/webpack --watch --config webpack.config.electron.js  --progress --profile --colors",
-      "env": {
-        "NODE_ENV": "development",
-        "API_SERVER": "http://192.168.1.2:3000",
-        "WEBSOCKET_SERVER": "http://192.168.1.2:8001",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://192.168.1.2:2096"
-      }
-    },
-    "server": {
-      "command": "node --max-old-space-size=4096 -r babel-register server.js",
-      "env": {
-        "NODE_ENV": "development",
-        "API_SERVER": "http://localhost:3000",
-        "WEBSOCKET_SERVER": "http://localhost:8001",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://localhost:2096"
-      }
-    },
-    "server:test": {
-      "command": "node --max-old-space-size=4096 -r babel-register server.js",
-      "env": {
-        "NODE_ENV": "development",
-        "API_SERVER": "http://35.167.249.144",
-        "WEBSOCKET_SERVER": "http://35.167.249.144:8001",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://35.167.249.144:2096"
-      }
-    },
-    "server:jackson": {
-      "command": "node --max-old-space-size=4096 -r babel-register server.js",
-      "env": {
-        "NODE_ENV": "development",
-        "API_SERVER": "http://192.168.1.2:3000",
-        "WEBSOCKET_SERVER": "http://192.168.1.2:8001",
-        "ELECTRON_CRASH_REPORT_SERVER": "http://192.168.1.2:2096"
+        "NODE_ENV": "production"
       }
     }
   },
@@ -128,69 +93,80 @@
   },
   "dependencies": {
     "asar": "^0.11.0",
-    "babel-core": "^6.11.4",
-    "babel-eslint": "^6.0.2",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-add-module-exports": "^0.1.2",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-plugin-webpack-loaders": "^0.4.0",
-    "babel-polyfill": "^6.7.4",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.7.2",
-    "better-npm-run": "0.0.13",
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
-    "chromedriver": "^2.21.2",
-    "co-mocha": "^1.1.2",
-    "concurrently": "^2.0.0",
-    "cross-env": "^1.0.7",
-    "css-loader": "^0.23.1",
-    "del": "^2.2.0",
-    "devtron": "^1.2.1",
-    "electron-chromedriver": "^1.4.0",
-    "electron-rebuild": "^1.1.3",
-    "es6-promise": "^3.3.1",
-    "eslint": "^2.9.0",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-import": "^1.8.0",
-    "eslint-plugin-jsx-a11y": "^1.2.0",
-    "eslint-plugin-react": "^5.1.1",
-    "express": "^4.13.4",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "fbjs-scripts": "^0.6.0",
-    "file-loader": "^0.9.0",
+    "babel-cli": "6.14.0",
+    "babel-core": "6.14.0",
+    "babel-loader": "6.2.5",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-plugin-lodash": "3.2.11",
+    "babel-plugin-transform-decorators-legacy": "1.3.4",
+    "babel-plugin-transform-react-constant-elements": "6.9.1",
+    "babel-plugin-transform-react-remove-prop-types": "0.2.9",
+    "babel-preset-env": "1.4.0",
+    "babel-preset-es2015": "6.14.0",
+    "babel-preset-react": "6.11.1",
+    "babel-preset-stage-0": "6.5.0",
+    "babel-runtime": "^6.23.0",
+    "better-npm-run": "0.0.15",
+    "bluebird": "3.5.0",
+    "chai": "3.5.0",
+    "chai-jquery": "2.0.0",
+    "cheerio": "0.22.0",
+    "child-process-promise": "2.2.1",
+    "chunk-manifest-webpack-plugin": "1.1.0",
+    "colors": "1.1.2",
+    "copy-webpack-plugin": "3.0.1",
+    "cross-env": "2.0.1",
+    "css-loader": "0.24.0",
+    "eslint-config-stemn": "git+https://git@github.com/stemn/eslint-config-stemn.git",
+    "extract-text-webpack-plugin": "2.0.0-beta.3",
+    "file-loader": "0.9.0",
     "gh-release": "https://github.com/Stemn/gh-release/tarball/master",
-    "happypack": "^2.2.1",
-    "jsdom": "^8.4.0",
-    "json-loader": "^0.5.4",
-    "minimist": "^1.2.0",
-    "mocha": "^2.4.5",
-    "ng-redux": "^3.4.0-beta.1",
-    "node-libs-browser": "^1.0.0",
-    "node-monkey": "^1.0.0-beta.2",
-    "node-sass": "^3.8.0",
-    "postcss-loader": "^1.3.3",
-    "react": "15.3.1",
-    "react-addons-test-utils": "^15.0.1",
-    "react-dom": "^15.4.1",
-    "sass-loader": "^4.0.1",
-    "selenium-webdriver": "^2.53.1",
-    "sinon": "^1.17.3",
-    "source-map-support": "^0.4.0",
-    "spectron": "^3.4.0",
-    "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",
-    "webfont-dl": "^0.1.2",
-    "webpack": "^2.6.0",
-    "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.10.0"
+    "happypack": "3.0.3",
+    "html-webpack-plugin": "2.28.0",
+    "http-server": "0.9.0",
+    "jquery": "3.1.0",
+    "jscs": "3.0.7",
+    "jsdom": "9.4.5",
+    "json-loader": "0.5.4",
+    "mime-types": "^2.1.15",
+    "mocha": "3.0.2",
+    "node-sass": "3.8.0",
+    "postcss-loader": "0.11.1",
+    "react-hot-loader": "3.0.0-beta.6",
+    "react-addons-test-utils": "15.3.1",
+    "redbox-react": "1.3.0",
+    "redux-devtools": "3.3.1",
+    "redux-devtools-dock-monitor": "1.1.1",
+    "redux-devtools-log-monitor": "1.0.11",
+    "redux-immutable-state-invariant": "1.2.3",
+    "redux-slider-monitor": "1.0.7",
+    "rimraf": "2.5.4",
+    "sass-loader": "4.0.1",
+    "script-loader": "0.7.0",
+    "snazzy": "6.0.0",
+    "ssh-promise": "2.1.0",
+    "standard": "10.0.0",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
+    "webpack": "2.1.0-beta.21",
+    "webpack-bundle-analyzer": "2.8.1",
+    "webpack-chunk-hash": "0.4.0",
+    "webpack-dashboard": "0.1.8",
+    "webpack-dev-middleware": "1.6.1",
+    "webpack-hot-middleware": "2.12.2",
+    "webpack-merge": "0.14.1"
   },
   "devDependencies": {
     "electron": "1.4.4",
     "electron-builder": "10.9.2"
+  },
+  "bin": {
+    "electron": "./node_modules/.bin/electron"
+  },
+  "standard": {
+    "ignore": [
+      "test"
+    ]
   },
   "devEngines": {
     "node": "4.x || 5.x || 6.x",
