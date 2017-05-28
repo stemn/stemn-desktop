@@ -27,7 +27,7 @@
       "env": {
         "NODE_ENV": "production",
         "API_SERVER": "https://dev.stemn.com",
-        "WEBSOCKET_SERVER": "https://dev.stemn.com:8001",
+        "WEBSOCKET_SERVER": "https://dev.stemn.com:8443",
         "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
       }
     },      
@@ -36,7 +36,7 @@
       "env": {
         "NODE_ENV": "production",
         "API_SERVER": "https://dev.stemn.com",
-        "WEBSOCKET_SERVER": "https://dev.stemn.com:8001",
+        "WEBSOCKET_SERVER": "https://dev.stemn.com:8443",
         "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
       }
     },    
@@ -45,7 +45,7 @@
       "env": {
         "NODE_ENV": "development",
         "API_SERVER": "https://dev.stemn.com",
-        "WEBSOCKET_SERVER": "https://dev.stemn.com:8001",
+        "WEBSOCKET_SERVER": "https://dev.stemn.com:8443",
         "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
       }
     },
@@ -54,7 +54,7 @@
       "env": {
         "NODE_ENV": "development",
         "API_SERVER": "https://dev.stemn.com",
-        "WEBSOCKET_SERVER": "https://dev.stemn.com:8001",
+        "WEBSOCKET_SERVER": "https://dev.stemn.com:8443",
         "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
       }
     },
