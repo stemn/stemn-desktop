@@ -4,7 +4,8 @@ const fs = require('fs');
 const mkdirp = require('mkdirp');
 
 // Config - Change this as required
-const version = 'v2.10'
+const version = 'v2.13'
+const outputFolder = 'viewer-2-13'
 
 const downloadAndSave = ({url, dest, onProgress}) => {
   return new Promise((resolve, reject) => {
@@ -34,7 +35,7 @@ const downloadAndSave = ({url, dest, onProgress}) => {
 
 Promise.all(viewerFileList.map(item => downloadAndSave({
   url  : `https://developer.api.autodesk.com/viewingservice/v1/viewers/${item}?v=${version}`,
-  dest : './viewer/'+item
+  dest : `./${outputFolder}/${item}`
 }))).then(response => {
   console.log('Download complete');
 })
