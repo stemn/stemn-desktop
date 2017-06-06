@@ -9299,6 +9299,9 @@ div.CodeMirror-dragcursors {
 
 /* Help users use markselection to safely style text background */
 span.CodeMirror-selectedtext { background: none; }
+input {
+  line-height: 1.3em;
+}
 .dr-input {
   height: 36px;
   padding: 10px;
@@ -9373,6 +9376,7 @@ body {
   overflow-x: hidden;
   font-size: 12px;
   padding: 0px !important;
+  line-height: 1.2em;
 
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -9909,6 +9913,7 @@ textarea {
 .UserAvatar_contain-3oow_{background-color:rgba(0,0,0,0.03);background-position:center center;background-repeat:no-repeat;background-size:contain}.UserAvatar_cover-28yPL{background-color:rgba(0,0,0,0.03);background-position:center center;background-repeat:no-repeat;background-size:cover}
 .CheckboxAlt_tickOnly-D2eBz input:checked+div{background:none !important;color:inherit !important}.CheckboxAlt_radio-2ncEq input{display:none}.CheckboxAlt_radio-2ncEq input+div{padding:10px;transition:all 0.1s ease}.CheckboxAlt_radio-2ncEq label:hover input+div{background-color:rgba(0, 0, 0, 0.03)}.CheckboxAlt_radio-2ncEq label input:checked+div{background:rgb(68, 154, 211);color:white}.CheckboxAlt_radio-2ncEq svg{transition:opacity 0.1s ease;opacity:0}.CheckboxAlt_radio-2ncEq label:hover svg{opacity:0.2}.CheckboxAlt_radio-2ncEq input:checked+div svg{opacity:1}
 .LabelSelect_swatch-1rrkz{margin-left:10px;width:8px;height:8px;margin-right:10px;border-radius:50%}
+.UserMinimalRow_user-2I-IB{display:block;margin-bottom:10px}.UserMinimalRow_user-2I-IB:last-child{margin-bottom:0px}.UserMinimalRow_user-2I-IB .UserMinimalRow_avatar-ZitMT{margin-right:10px}
 .DatePicker_close-2qcnj{padding:10px;z-index:1;position:absolute;right:0;top:50%;transform:translateY(-50%);color:#999999;font-size:16px}.DatePicker_close-2qcnj:hover{color:black}.DatePicker_fixedOption-2AB0X{padding:10px 15px;transition:0.2s ease}.DatePicker_fixedOption-2AB0X:hover{background:rgba(0, 0, 0, 0.03)}.DatePicker_fixedOptionTime-34wWm{color:rgba(0,0,0,0.3);font-size:12px}.DatePicker_divider-3_UDs{border-top:1px solid rgba(0, 0, 0, 0.1)}
 .Calendar_calendar-1-nVV{width:100%;min-width:350px}.Calendar_calendarGrid-2peW2{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;width:100%}.Calendar_calendarHeader-3ClUL{padding:0 5px;line-height:29px;background:rgba(0, 0, 0, 0.03);color:rgba(0,0,0,0.6);text-align:center;display:-ms-flexbox;display:flex;font-size:13px;-ms-flex-pack:justify;justify-content:space-between}.Calendar_calendarHeader-3ClUL button{font-size:16px;border:0;background:transparent;color:rgba(0,0,0,0.6);cursor:pointer}.Calendar_calendarHeader-3ClUL button:focus{outline:none}.Calendar_calendarGridItem-2mspF{-ms-flex:0 14.28571%;flex:0 14.28571%;text-align:center;padding:12px 0;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;position:relative;color:rgba(0,0,0,0.7);cursor:pointer}.Calendar_calendarGridItem-2mspF span{position:relative}.Calendar_calendarGridItem-2mspF.Calendar_dayHeader-2qAlv{text-transform:uppercase;font-size:10px}.Calendar_calendarGridItem-2mspF.prevMonth,.Calendar_calendarGridItem-2mspF.nextMonth{opacity:0.3}.Calendar_calendarGridItem-2mspF.current:before{content:'';position:absolute;left:50%;top:50%;border-radius:50%;border:1px solid rgb(68, 154, 211);transform:translate(-50%, -50%);width:30px;height:30px}.Calendar_calendarGridItem-2mspF.selected{color:white}.Calendar_calendarGridItem-2mspF.selected:before{content:'';position:absolute;left:50%;top:50%;background:rgb(68, 154, 211);border-radius:50%;transform:translate(-50%, -50%);width:30px;height:30px}.Calendar_calendarDatepicker-341qW{min-width:0px}
 .CommentNew_commentAvatar-3K-Vr{margin-right:10px}.CommentNew_commentBody-8AOBw{background:white;border:1px solid rgba(0, 0, 0, 0.1);line-height:1.5em}.CommentNew_commentBodyHidden-ztXnA{max-height:58px;overflow:hidden}.CommentNew_commentHeader-3y0x4{background:white;padding:15px 20px}.CommentNew_commentContent-2ZJPo{margin:20px;margin-top:0px;overflow:hidden}.CommentNew_commentFooter-c1s4Z{padding:6px 20px;border-top:1px dashed rgba(0,0,0,0.2)}.CommentNew_commentNew-ZGtxz{position:relative}.CommentNew_commentNew-ZGtxz .CommentNew_commentBody-8AOBw{transition:0.3s ease all;cursor:text}.CommentNew_commentNew-ZGtxz .CommentNew_commentBody-8AOBw:hover{border:1px solid rgba(0,0,0,0.4)}
