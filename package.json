@@ -30,7 +30,7 @@
         "WEBSOCKET_SERVER": "https://dev.stemn.com:8443",
         "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
       }
-    },      
+    },
     "build:renderer": {
       "command": "node ./scripts/renderer.production.js",
       "env": {
@@ -39,7 +39,7 @@
         "WEBSOCKET_SERVER": "https://dev.stemn.com:8443",
         "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
       }
-    },    
+    },
     "start:renderer": {
       "command": "node ./scripts/renderer.development.js",
       "env": {
@@ -63,7 +63,7 @@
       "env": {
         "NODE_ENV": "development"
       }
-    },   
+    },
     "electron:prod": {
       "command": "electron dist/main",
       "env": {
@@ -157,11 +157,8 @@
     "webpack-merge": "0.14.1"
   },
   "devDependencies": {
-    "electron": "1.4.4",
+    "electron": "^1.6.10",
     "electron-builder": "10.9.2"
-  },
-  "bin": {
-    "electron": "./node_modules/.bin/electron"
   },
   "standard": {
     "ignore": [
