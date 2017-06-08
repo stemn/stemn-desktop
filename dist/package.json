@@ -1,6 +1,6 @@
 {
   "name": "Stemn",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Stemn Desktop: Versioning and project management",
   "main": "main/index.js",
   "author": {
@@ -26,7 +26,7 @@
     "dotenv": "^2.0.0",
     "electron-debug": "^0.6.0",
     "electron-json-storage": "^2.0.0",
-    "electron-log": "^1.2.2",
+    "electron-log": "1.2.2",
     "electron-positioner": "^3.0.0",
     "electron-simple-updater": "^1.1.3",
     "electron-squirrel-startup": "^1.0.0",
