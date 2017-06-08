@@ -11,6 +11,7 @@
   "scripts": {
     "analyse:electron": "webpack-bundle-analyzer ./reports/electron-stats.json",
     "analyse:renderer": "webpack-bundle-analyzer ./reports/renderer-stats.json",
+    "prebuild": "rimraf dist",
     "build": "npm run build:electron && npm run build:renderer",
     "build:electron": "better-npm-run build:electron",
     "build:renderer": "better-npm-run build:renderer",
