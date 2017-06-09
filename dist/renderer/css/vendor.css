@@ -9371,7 +9371,7 @@ html {
 }
 
 body {
-  border: 1px solid rgba(0, 0, 0, 0.9);
+/*  border: 1px solid rgba(0, 0, 0, 0.9);*/
   color: black;
   height: 100vh;
   background-color: white;
