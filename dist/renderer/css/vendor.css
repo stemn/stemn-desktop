@@ -9390,6 +9390,7 @@ body {
   user-select: none;           /* Non-prefixed version, currently
                                   not supported by any browser */
 }
+
 .scroll-box{
   overflow-y: auto;
   overflow-x: hidden;
