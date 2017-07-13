@@ -1,6 +1,6 @@
 {
   "name": "Stemn",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Stemn Desktop: Versioning and project management",
   "main": "main/index.js",
   "author": {
