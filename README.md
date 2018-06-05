@@ -16,4 +16,5 @@ New releases are automatically installed by the application. Auto-update is supp
 You can download the lastest version directly from [Stemn](https://dev.stemn.com/download).
 
 ## Open Source
-The entire Stemn Desktop application is open source. This repo contains the compiled dist. The source is available [here](https://github.com/stemn/stemn-frontend/tree/master/electronNew).
+
+The entire Stemn Desktop application is open source. This repo contains the compiled dist. The source is available [here](https://github.com/stemn/stemn-frontend).
