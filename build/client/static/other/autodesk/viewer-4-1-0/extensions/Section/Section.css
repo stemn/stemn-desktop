@@ -1,0 +1,56 @@
+/**
+ * Section CSS
+ **/
+.sectionPanel {
+    line-height: 14px;
+    text-align: left;
+    z-index: 10;
+}
+
+.section-horizontal-divider
+{
+    height: 1px;
+    border-top: 1px solid rgba(200,200,200,0.8);
+}
+
+.section-submenu-select
+{
+    display: block;
+    position: relative;
+    width: calc(100% - 40px);
+    padding: 10px 20px 0px 20px;
+    opacity: 0.3;
+}
+
+.section-panel:hover .section-submenu-select {
+   opacity: 0.8;
+}
+
+.section-submenu-selectlabel
+{
+    position: relative;
+    display:  inline-block;
+    padding-right:  20px;
+    padding-bottom:  4px;
+}
+
+.section-restart {
+    margin: 10px 20px 15px 20px;
+    padding: 6px 10px 6px 10px;
+    width: calc(100% - 55px);
+    cursor: pointer;
+}
+
+.docking-panel:hover .section-restart {
+    background-color: rgba(255,255,255, .12);
+}
+
+.docking-panel .section-restart:hover {
+    background-color: rgba(166,194,255, 0.7);
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stemn</title>
+<link rel="stylesheet" href="/static/fonts/opensans/opensans.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic" type="text/css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="manifest" href="/images/manifest.json">
+<meta name="msapplication-TileColor" content="#0f1012">
+<meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
+<meta name="theme-color" content="#0f1012">
+  <style>
+    #spinner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 10000;
+      transition: 0.3s ease all;
+    }
+    .page-spinner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+    }
+    .page-spinner svg{
+      animation: rotate 2s linear infinite;
+    }
+    .page-spinner circle{
+      animation: dash 1.5s ease-in-out infinite;
+      stroke: rgb(68, 154, 211);
+      stroke-linecap: round;
+    }
+    @keyframes rotate {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    @keyframes dash {
+      0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+      }
+      100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+      }
+    }
+  </style>
+<link rel="stylesheet" href="/css/app.c5073e1575f908b8d87e.css">
+
+      <script>
+        //<![CDATA[
+        window.webpackManifest = {"0":"js/0.2f711f1b9305f5a0ba15.js","1":"js/1.f8601d80ed491b2a9dde.js","2":"js/2.a081664e5f8689c9ff4f.js","3":"js/3.c5073e1575f908b8d87e.js","4":"js/4.f6f0def6ea9863a261ff.js","5":"js/5.07428d83d12a1419a3ed.js"}
+        //]]>
+      </script>
+</head>
+
+<body class="layout-column">
+<div class="layout-column flex" id="app"></div>
+<div id="spinner">
+  <div class="page-spinner">
+    <svg viewbox="25 25 50 50">
+      <circle cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+    </svg>
+  </div>
+</div>
+
+
+<script src="/js/manifest.d41d8cd98f00b204e980.js"></script>
+<script src="/js/vendor.f6f0def6ea9863a261ff.js"></script>
+<script src="/js/application.c5073e1575f908b8d87e.js"></script>
+</body>
+</html>
