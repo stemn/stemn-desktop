@@ -1,6 +1,6 @@
 {
   "name": "stemn-frontend-desktop",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "Stemn Desktop: Versioning and project management",
   "main": "main/index.js",
   "author": {
