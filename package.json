@@ -9,7 +9,7 @@
   },
   "main": "dist/main/index.js",
   "scripts": {
-    "install": "sh ./scripts/install.sh",
+    "install:all": "sh ./scripts/install.sh",
     "install:electron:wsl": "npm uninstall electron && export npm_config_platform=win32 && npm install electron && unset npm_config_platform",
     "deploy": "sh ./scripts/deploy.sh",
     "analyse:electron": "webpack-bundle-analyzer ./reports/electron-stats.json",
