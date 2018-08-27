@@ -9,8 +9,28 @@
   <link rel="stylesheet" href="../../css/vendor.css">
 <link rel="stylesheet" href="../../css/preview.css">
 </head>
-  <body class="layout-column">
-    <div class="layout-column flex" id="root" style="overflow: hidden"></div>
+  <style>
+    html {
+      box-sizing: border-box; 
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+  </style>
+  <body style="margin: 0px; height: 100vh; overflow: hidden; display: flex; flex-direction: column;">
+    <div style="flex: 1; display: flex; flex-direction: column;" id="root">
+      <!-- Mock Content below will be replaced after react mount -->
+      <div style="height: 50px; border-bottom: 1px solid rgba(0, 0, 0, 0.1); -webkit-user-select: none; -webkit-app-region: drag; cursor: default;"></div>
+      <div style="flex: 1; display: flex;">
+        <!-- Content Header -->
+        <div style="flex: 1; display: flex; flex-direction: column;">
+          <div style="flex: 1;"></div>
+          <div style="height: 64px; background: rgb(248, 248, 248); border-top: 1px solid rgba(0, 0, 0, 0.1);"></div>
+        </div>
+        <!-- Content Sidebar -->
+        <div style="border-left: 1px solid rgba(0, 0, 0, 0.1); width: 450px;"></div>
+      </div>
+    </div>
     
     
     

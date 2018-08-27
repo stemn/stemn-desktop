@@ -14,43 +14,11 @@
     "deploy": "sh ./scripts/deploy.sh",
     "analyse:electron": "webpack-bundle-analyzer ./reports/electron-stats.json",
     "analyse:renderer": "webpack-bundle-analyzer ./reports/renderer-stats.json",
-    "build": "sh ./scripts/build.sh",
-    "start:renderer": "better-npm-run start:renderer",
-    "start:electron": "better-npm-run start:electron",
-    "electron": "better-npm-run electron",
-    "electron:prod": "better-npm-run electron:prod"
-  },
-  "betterScripts": {
-    "start:renderer": {
-      "command": "node ./scripts/renderer.development.js",
-      "env": {
-        "NODE_ENV": "development",
-        "API_SERVER": "https://dev.stemn.com",
-        "WEBSOCKET_SERVER": "https://dev.stemn.com:8443",
-        "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
-      }
-    },
-    "start:electron": {
-      "command": "webpack --watch --config ./config/webpack.config.electron.js",
-      "env": {
-        "NODE_ENV": "development",
-        "API_SERVER": "https://dev.stemn.com",
-        "WEBSOCKET_SERVER": "https://dev.stemn.com:8443",
-        "ELECTRON_CRASH_REPORT_SERVER": "https://dev.stemn.com:2096"
-      }
-    },
-    "electron": {
-      "command": "electron dist/main",
-      "env": {
-        "NODE_ENV": "development"
-      }
-    },
-    "electron:prod": {
-      "command": "electron dist/main",
-      "env": {
-        "NODE_ENV": "production"
-      }
-    }
+    "build": "NODE_ENV=production STEMN_ENV=production sh ./scripts/build.sh",
+    "start:renderer": "NODE_ENV=development STEMN_ENV=staging node ./scripts/startRenderer.js",
+    "start:electron": "NODE_ENV=development STEMN_ENV=staging webpack --watch --config ./config/webpack.config.electron.js",
+    "electron": "NODE_ENV=development electron dist/main",
+    "electron:prod": "NODE_ENV=production electron dist/main"
   },
   "bin": {
     "electron": "./node_modules/.bin/electron"
