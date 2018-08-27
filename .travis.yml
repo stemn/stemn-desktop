@@ -15,6 +15,7 @@ cache:
   - $HOME/.cache
 
 before_install:
+- brew update
 - brew install graphicsmagick
 - brew install libpng
 - brew install openjpeg
