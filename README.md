@@ -1,20 +1,15 @@
-![Banner](https://dev.stemn.com/images/deviceMockups.jpg?c14eaba209d573117649415c7b16954c)
-
 # Stemn Desktop
-Stemn Desktop is the desktop client for the [Stemn Version Control System](https://dev.stemn.com) for Google Drive and Dropbox. 
 
-## Community
-[![Gitter chat](https://badges.gitter.im/stemn-desktop/stemn.png)](https://gitter.im/stemn-desktop/stemn)
+This repository holds the **releases** of the Stemn desktop application (installers and auto-update
+manifests). It contains no source code and nothing is committed here by hand.
 
-Join our Gitter chat room! Make feature requests, discuss the future of the project, and receive assistance on adding your own code from the core Stemn developers.
+* Source code: [stemn/stemn-frontend](https://github.com/stemn/stemn-frontend), package `stemn-frontend-desktop`.
+* Releases are built, signed and published to this repository's
+  [Releases](https://github.com/stemn/stemn-desktop/releases) by the `desktop-release` GitHub Actions
+  workflow in `stemn-frontend` (see `docs/plans/desktop-auto-update-and-signing.md` there).
+* Installed applications check this repository's release feed for updates (electron-updater).
+* Publishing a draft release here runs `.github/workflows/notify-stemn-frontend.yml`, which triggers the
+  `promote` job of the release workflow in `stemn-frontend` (secret `STEMN_FRONTEND_DISPATCH_TOKEN`).
+* Download the latest version from [stemn.com/download](https://stemn.com/download).
 
-## Releases
-This repository contains all [releases](https://github.com/stemn/Stemn-Desktop/releases) of the Stemn Desktop application.
-
-New releases are automatically installed by the application. Auto-update is supported for Windows, OSX and Linux.
-
-You can download the lastest version directly from [Stemn](https://dev.stemn.com/download).
-
-## Open Source
-
-The entire Stemn Desktop application is open source. This repo contains the compiled dist. The source is available [here](https://github.com/stemn/stemn-frontend).
+`build/` keeps the installer artwork (icons, DMG background) used by the release build.

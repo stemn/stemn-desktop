@@ -1,0 +1,13 @@
+name: notify stemn-frontend
+on:
+  release:
+    types: [published]
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: >
+          gh api repos/stemn/stemn-frontend/dispatches -f event_type=desktop-release-published
+          -f 'client_payload[version]=${{ github.event.release.tag_name }}'
+        env:
+          GH_TOKEN: ${{ secrets.STEMN_FRONTEND_DISPATCH_TOKEN }}
